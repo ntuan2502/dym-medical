@@ -57,7 +57,12 @@ export default function NewDetail() {
           </h2>
           <div
             className="max-w-2xl mx-auto"
-            dangerouslySetInnerHTML={{ __html: news.attributes.description }}
+            dangerouslySetInnerHTML={{
+              __html: news.attributes.description.replaceAll(
+                process.env.NEXT_PUBLIC_NEWSAPI_URL_HTTP,
+                process.env.NEXT_PUBLIC_NEWSAPI_URL
+              ),
+            }}
           />
         </div>
       </div>
