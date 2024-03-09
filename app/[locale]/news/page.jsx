@@ -21,7 +21,7 @@ export default function News() {
           locale
       );
       setNews(res.data.data);
-      console.log(res.data.data);
+      // console.log(res.data.data);
     } catch (error) {
       return error;
     }
@@ -46,7 +46,7 @@ export default function News() {
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 md:max-w-screen-xl">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            {t("UI.Navbar.News")}
+            {/* {t("UI.Navbar.News")} */}
           </h2>
           {news.map((item, key) => (
             <Link

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -37,6 +37,7 @@ export default function App() {
   const router = useRouter();
   const params = useParams();
   const locale = params.locale.toString();
+  const slug = params.slug?.toString();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(
@@ -340,7 +341,12 @@ export default function App() {
         >
           <DropdownItem
             onClick={() => {
-              router.push("/vi" + pathname.slice(3));
+              // console.log(params.slug);
+              if (slug == undefined || locale == "vi") {
+                router.push("/vi" + pathname.slice(3));
+              } else {
+                router.push("/vi" + pathname.slice(3).replace(slug, ""));
+              }
               setSelectedValue(t("Data.Language.VI"));
             }}
             key="vi"
@@ -349,7 +355,11 @@ export default function App() {
           </DropdownItem>
           <DropdownItem
             onClick={() => {
-              router.push("/en" + pathname.slice(3));
+              if (slug == undefined || locale == "en") {
+                router.push("/en" + pathname.slice(3));
+              } else {
+                router.push("/en" + pathname.slice(3).replace(slug, ""));
+              }
               setSelectedValue(t("Data.Language.EN"));
             }}
             key="en"
@@ -358,7 +368,11 @@ export default function App() {
           </DropdownItem>
           <DropdownItem
             onClick={() => {
-              router.push("/ja" + pathname.slice(3));
+              if (slug == undefined || locale == "ja") {
+                router.push("/ja" + pathname.slice(3));
+              } else {
+                router.push("/ja" + pathname.slice(3).replace(slug, ""));
+              }
               setSelectedValue(t("Data.Language.JA"));
             }}
             key="ja"
