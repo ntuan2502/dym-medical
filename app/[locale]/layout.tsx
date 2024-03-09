@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./Navbar";
 import Footer from "./components/Home/Footer";
 import MetaTags from "./metaTags";
+import React from "react";
 
 type RootLayoutProps = {
   children: React.ReactNode;

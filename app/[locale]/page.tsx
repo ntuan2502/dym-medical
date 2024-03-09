@@ -1,5 +1,4 @@
 "use client";
-import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import FAQ from "./components/Home/FAQ";
 import FreeTrial from "./components/Home/FreeTrial";

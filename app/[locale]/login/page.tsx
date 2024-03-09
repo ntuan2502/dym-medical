@@ -2,14 +2,10 @@
 import { useState } from "react";
 import { Button, Input, Link } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
-import axios from "axios";
-import { toast } from "react-toastify";
-import { FORGOT_PASSWORD, HOME, REGISTER } from "../../../route";
-import { useRouter } from "next/navigation";
+import { FORGOT_PASSWORD, REGISTER } from "../../../route";
 
 export default function App() {
   const t = useTranslations();
-  const router = useRouter();
 
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
@@ -131,7 +127,7 @@ export default function App() {
                 <Button
                   color="primary"
                   className="w-full"
-                  // onClick={() => handleLogin()}
+                // onClick={() => handleLogin()}
                 >
                   {t("Data.Login.ButtonLogin")}
                 </Button>

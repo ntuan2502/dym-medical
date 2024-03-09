@@ -13,7 +13,6 @@ import {
   DropdownMenu,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem,
   Avatar,
   Accordion,
   AccordionItem,
@@ -37,17 +36,16 @@ export default function App() {
   const router = useRouter();
   const params = useParams();
   const locale = params.locale.toString();
-  const slug = params.slug?.toString();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(
     locale == "vi"
       ? t("Data.Language.VI")
       : locale == "en"
-      ? t("Data.Language.EN")
-      : locale == "ja"
-      ? t("Data.Language.JA")
-      : t("Data.Language.VI")
+        ? t("Data.Language.EN")
+        : locale == "ja"
+          ? t("Data.Language.JA")
+          : t("Data.Language.VI")
   );
 
   const [account, setAccount] = useState<string | null>("");
@@ -341,12 +339,7 @@ export default function App() {
         >
           <DropdownItem
             onClick={() => {
-              // console.log(params.slug);
-              if (slug == undefined || locale == "vi") {
-                router.push("/vi" + pathname.slice(3));
-              } else {
-                router.push("/vi" + pathname.slice(3).replace(slug, ""));
-              }
+              router.push("/vi" + pathname.slice(3));
               setSelectedValue(t("Data.Language.VI"));
             }}
             key="vi"
@@ -355,11 +348,8 @@ export default function App() {
           </DropdownItem>
           <DropdownItem
             onClick={() => {
-              if (slug == undefined || locale == "en") {
-                router.push("/en" + pathname.slice(3));
-              } else {
-                router.push("/en" + pathname.slice(3).replace(slug, ""));
-              }
+              router.push("/en" + pathname.slice(3));
+
               setSelectedValue(t("Data.Language.EN"));
             }}
             key="en"
@@ -368,11 +358,7 @@ export default function App() {
           </DropdownItem>
           <DropdownItem
             onClick={() => {
-              if (slug == undefined || locale == "ja") {
-                router.push("/ja" + pathname.slice(3));
-              } else {
-                router.push("/ja" + pathname.slice(3).replace(slug, ""));
-              }
+              router.push("/ja" + pathname.slice(3));
               setSelectedValue(t("Data.Language.JA"));
             }}
             key="ja"

@@ -1,11 +1,8 @@
 "use client";
-import { APPOINTMENT, BOOKING, BOOKING_HCM_D1, HOME } from "@/route";
+import { BOOKING, BOOKING_HCM_D1, HOME } from "@/route";
 import {
-  Accordion,
-  AccordionItem,
   BreadcrumbItem,
   Breadcrumbs,
-  Button,
   Link,
 } from "@nextui-org/react";
 import { useTranslations } from "next-intl";

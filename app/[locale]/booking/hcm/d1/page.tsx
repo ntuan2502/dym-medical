@@ -10,41 +10,6 @@ import {
 } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 
-const products = [
-  {
-    name: "Khám sức khỏe cho khách lẻ",
-    href: "#",
-    imageSrc: "/dym_icon.svg",
-    imageAlt: "",
-    price: "1.000.000 VND +",
-    content: "Khám sức khỏe cho khách lẻ",
-  },
-  {
-    name: "Khám sức khỏe cho người Nhật",
-    href: "#",
-    imageSrc: "/dym_icon.svg",
-    imageAlt: "",
-    price: "4.000.000 VND +",
-    content: "Khám sức khỏe cho người Nhật",
-  },
-  {
-    name: "Khám sức khỏe cho người Việt Nam",
-    href: "#",
-    imageSrc: "/dym_icon.svg",
-    imageAlt: "",
-    price: "1.000.000 VND +",
-    content: "Khám sức khỏe cho người Việt Nam",
-  },
-  {
-    name: "Khám sức khỏe làm việc",
-    href: "#",
-    imageSrc: "/dym_icon.svg",
-    imageAlt: "",
-    price: "2.400.000 VND",
-    content: "Khám sức khỏe làm việc",
-  },
-];
-
 const outpatientServices = [
   {
     name: "Khám chuyên gia",

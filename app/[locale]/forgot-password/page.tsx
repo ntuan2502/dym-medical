@@ -1,14 +1,13 @@
 "use client";
-import { useState } from "react";
 import { Button, Input, Link } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { LOGIN, REGISTER } from "@/route";
 
 export default function App() {
   const t = useTranslations();
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  const togglFeVisibility = () => setIsVisible(!isVisible);
+  // const togglFeVisibility = () => setIsVisible(!isVisible);
 
   return (
     <div className="">
