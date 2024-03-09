@@ -132,7 +132,7 @@ export default function App() {
         />
         <NavbarBrand>
           <Link href={HOME}>
-            <img src="/dym.svg" className="h-10" />
+            <img src="/dym.svg" alt="" className="h-10" />
           </Link>
           {/* <AcmeLogo /> */}
           {/* <p className="font-bold text-inherit">DYM</p> */}

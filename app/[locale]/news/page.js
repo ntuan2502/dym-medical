@@ -1,5 +1,5 @@
 "use client";
-import { HOME } from "@/route";
+import { HOME, NEWS } from "@/route";
 import { BreadcrumbItem, Breadcrumbs, Link } from "@nextui-org/react";
 import axios from "axios";
 import { useTranslations } from "next-intl";
@@ -48,31 +48,29 @@ export default function News() {
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             {t("UI.Navbar.News")}
           </h2>
-          <div className="">
-            {news.map((item, key) => (
-              <a
-                key={key}
-                href="#"
-                className="py-2 my-2 flex flex-col bg-white rounded-lg sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-              >
-                <div className="flex justify-center items-center">
-                  <img
-                    className="object-cover h-40 w-fit min-w-72 rounded-lg"
-                    src={
-                      process.env.NEXT_PUBLIC_NEWSAPI_URL +
-                      item.attributes.thumbnail.data.attributes.url
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="flex justify-center items-center px-4">
-                  <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                    {item.attributes.title}
-                  </h5>
-                </div>
-              </a>
-            ))}
-          </div>
+          {news.map((item, key) => (
+            <Link
+              key={key}
+              href={NEWS + "/" + item.attributes.slug}
+              className="py-2 my-2 flex flex-col bg-white rounded-lg sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            >
+              <div className="flex justify-center items-center">
+                <img
+                  className="object-cover h-40 w-fit min-w-72 rounded-lg"
+                  src={
+                    process.env.NEXT_PUBLIC_NEWSAPI_URL +
+                    item.attributes.thumbnail.data.attributes.url
+                  }
+                  alt=""
+                />
+              </div>
+              <div className="flex justify-center items-center px-4">
+                <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  {item.attributes.title}
+                </h5>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
