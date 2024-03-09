@@ -81,7 +81,7 @@ export default function App() {
                     variant="bordered"
                     name="phoneNumber"
                     value={phoneNumber}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                   <Input
                     type="text"

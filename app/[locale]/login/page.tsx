@@ -7,11 +7,11 @@ import { FORGOT_PASSWORD, REGISTER } from "../../../route";
 export default function App() {
   const t = useTranslations();
 
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  // const toggleVisibility = () => setIsVisible(!isVisible);
 
   // const getAccount = async (authKey: any) => {
   //   try {

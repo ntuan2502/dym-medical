@@ -13,7 +13,7 @@ import {
   DropdownMenu,
   NavbarMenuToggle,
   NavbarMenu,
-  Avatar,
+  // Avatar,
   Accordion,
   AccordionItem,
 } from "@nextui-org/react";
@@ -37,7 +37,6 @@ export default function App() {
   const params = useParams();
   const locale = params.locale.toString();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(
     locale == "vi"
       ? t("Data.Language.VI")
@@ -48,7 +47,7 @@ export default function App() {
           : t("Data.Language.VI")
   );
 
-  const [account, setAccount] = useState<string | null>("");
+  // const [account, setAccount] = useState<string | null>("");
 
   // useEffect(() => {
   //   setAccount(localStorage.getItem("account"));
@@ -126,15 +125,12 @@ export default function App() {
     <Navbar maxWidth="xl">
       <NavbarContent>
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
           <Link href={HOME}>
             <img src="/dym.svg" alt="" className="h-10" />
           </Link>
-          {/* <AcmeLogo /> */}
-          {/* <p className="font-bold text-inherit">DYM</p> */}
         </NavbarBrand>
       </NavbarContent>
 
@@ -216,7 +212,7 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
 
-      {account != "" ? (
+      {/* {account != "" ? (
         <NavbarContent as="div" justify="end">
           <Dropdown placement="bottom-end">
             <DropdownTrigger>
@@ -269,7 +265,18 @@ export default function App() {
             </Button>
           </NavbarItem>
         </NavbarContent>
-      )}
+      )} */}
+
+      <NavbarContent className="hidden lg:flex" justify="end">
+        <NavbarItem>
+          <Link href={LOGIN}>{t("auth.signIn.text")}</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href={REGISTER} variant="flat">
+            {t("auth.signUp.text")}
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
 
       <NavbarMenu>
         <Accordion>
