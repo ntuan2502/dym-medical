@@ -38,7 +38,7 @@ export default function App() {
     try {
       const res = await axios.get(
         process.env.NEXT_PUBLIC_NEWSAPI_URL +
-          "/terms-of-service?locale=" +
+          "/api/terms-of-service?locale=" +
           locale
       );
       // console.log(res.data.data.attributes.description);

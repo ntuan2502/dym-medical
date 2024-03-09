@@ -29,7 +29,7 @@ import {
 } from "./components/svg/Icons";
 import { useTranslations } from "next-intl";
 import { useParams, useRouter, usePathname } from "next/navigation";
-import { BOOKING, CONTACT, HOME, LOGIN, REGISTER, STORY } from "@/route";
+import { BOOKING, CONTACT, HOME, LOGIN, NEWS, REGISTER, STORY } from "@/route";
 
 export default function App() {
   const t = useTranslations();
@@ -211,7 +211,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="foreground">
+          <Link href={NEWS} color="foreground">
             {t("UI.Navbar.News")}
           </Link>
         </NavbarItem>
@@ -316,7 +316,7 @@ export default function App() {
         </Link>
         <Link
           className="w-full px-2 py-3"
-          href="#"
+          href={NEWS}
           size="lg"
           color="foreground"
         >
