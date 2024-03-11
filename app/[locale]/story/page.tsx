@@ -46,7 +46,7 @@ export default function App() {
                 <Breadcrumbs underline="hover" className="py-2">
                   <BreadcrumbItem>
                     <Link href={HOME} className="text-gray-500 text-md">
-                    {t("UI.Navbar.Home")}
+                    {t("Data.General.Home")}
                     </Link>
                   </BreadcrumbItem>
                   <BreadcrumbItem>Câu chuyện từ nhà sáng lập</BreadcrumbItem>

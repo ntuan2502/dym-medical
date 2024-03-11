@@ -14,7 +14,7 @@ export default function Contact() {
       <Breadcrumbs underline="hover" className="py-2 px-4">
         <BreadcrumbItem>
           <Link href={HOME} className="text-gray-500 text-md">
-          {t("UI.Navbar.Home")}
+          {t("Data.General.Home")}
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>{t("UI.Contact.Title")}</BreadcrumbItem>

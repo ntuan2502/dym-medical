@@ -1,44 +1,32 @@
 'use client';
-import { HOME, NEWS } from '@/route';
+import { HOME } from '@/route';
 import { BreadcrumbItem, Breadcrumbs, Link } from '@nextui-org/react';
 import axios from 'axios';
 import { useTranslations } from 'next-intl';
-import { useParams, useRouter, usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import Loading from '../../components/Loading';
+import Loading from '../components/Loading';
 
-export default function NewDetail() {
+export default function PrivacyPolicy() {
     const t = useTranslations();
     const params = useParams();
-    const router = useRouter();
-    const pathname = usePathname();
     const locale = params.locale.toString();
-    const slug = params.slug.toString();
-    const [news, setNews] = useState();
+    const [privacyPolicy, setPrivacyPolicy] = useState();
 
-    const getNews = async () => {
+    const getPrivacyPolicy = async () => {
         try {
-            const res = await axios.get(
-                process.env.NEXT_PUBLIC_NEWSAPI_URL +
-                    '/api/posts?populate=category,thumbnail&filters[slug][$eq]=' +
-                    params.slug +
-                    '&locale=' +
-                    locale,
-            );
-            setNews(res.data.data[0]);
-            if (res.data.data[0] == undefined) {
-                router.push('/' + locale + pathname.slice(3).replace(slug, ''));
-            }
+            const res = await axios.get(process.env.NEXT_PUBLIC_NEWSAPI_URL + '/api/terms-of-service?locale=' + locale);
+            setPrivacyPolicy(res.data.data);
         } catch (error) {
             return error;
         }
     };
 
     useEffect(() => {
-        getNews();
+        getPrivacyPolicy();
     }, []);
 
-    if (news == null) return <Loading />;
+    if (privacyPolicy == null) return <Loading />;
 
     return (
         <div>
@@ -49,20 +37,15 @@ export default function NewDetail() {
                     </Link>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                    <Link href={NEWS} className="text-gray-500 text-md">
-                        {t('Data.General.News')}
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <div className="text-wrap">{news.attributes.title}</div>
+                    <div className="text-wrap">{privacyPolicy.attributes.name}</div>
                 </BreadcrumbItem>
             </Breadcrumbs>
-            <div className="bg-white px-4 ">
+            <div className="bg-white px-4">
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900">{/* {news.attributes.title} */}</h2>
                 <div
                     className="mx-auto max-w-3xl"
                     dangerouslySetInnerHTML={{
-                        __html: news.attributes.description.replaceAll(
+                        __html: privacyPolicy.attributes.description.replaceAll(
                             process.env.NEXT_PUBLIC_NEWSAPI_URL_HTTP,
                             process.env.NEXT_PUBLIC_NEWSAPI_URL,
                         ),

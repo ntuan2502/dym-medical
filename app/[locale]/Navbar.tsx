@@ -207,7 +207,7 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link href={NEWS} color="foreground">
-            {t("UI.Navbar.News")}
+            {t("Data.General.News")}
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -269,11 +269,11 @@ export default function App() {
 
       <NavbarContent className="hidden lg:flex" justify="end">
         <NavbarItem>
-          <Link href={LOGIN}>{t("auth.signIn.text")}</Link>
+          <Link href={LOGIN}>{t("Data.Login.ButtonLogin")}</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href={REGISTER} variant="flat">
-            {t("auth.signUp.text")}
+            {t("Data.Login.ButtonRegister")}
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -326,7 +326,7 @@ export default function App() {
           size="lg"
           color="foreground"
         >
-          {t("UI.Navbar.News")}
+          {t("Data.General.News")}
         </Link>
       </NavbarMenu>
 
