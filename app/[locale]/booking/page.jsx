@@ -1,7 +1,7 @@
 'use client';
 
 import { Tabs, Tab, Card, CardBody, Link, Breadcrumbs, BreadcrumbItem, useDisclosure } from '@nextui-org/react';
-import { BOOKING_HCM_D1, BOOKING_HCM_D7, BOOKING_HN_NTL, HOME } from '@/route';
+import { BOOKING_HCM_D1, HOME } from '@/route';
 import { useEffect, useState } from 'react';
 import VideoModal from './VideoModal';
 import { useTranslations } from 'next-intl';
